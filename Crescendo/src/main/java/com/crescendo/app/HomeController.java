@@ -15,7 +15,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		
-		model.addAttribute("serverTime", "Test4" );
+		model.addAttribute("serverTime", "Test5" );
+		model.addAttribute("assd", "dfdsf" );
+		model.addAttribute("adfgdfgssd", "dfdsf" );
 		
 		return "home";
 	}
