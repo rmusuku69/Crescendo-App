@@ -16,7 +16,7 @@ public class HomeController {
 	public String home(Model model) {
 		
 		model.addAttribute("serverTime", "Test4" );
-		
+		model.addAttribute("hgd", "hfhh");
 		return "home";
 	}
 	
