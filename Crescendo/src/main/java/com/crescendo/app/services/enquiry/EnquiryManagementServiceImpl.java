@@ -3,8 +3,7 @@ package com.crescendo.app.services.enquiry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.crescendo.app.constants.OperationType;
-import com.crescendo.app.entities.EnquiryDto;
+import com.crescendo.app.components.Enquiry;
 
 @Service
 public class EnquiryManagementServiceImpl implements EnquiryManagementService {
@@ -16,9 +15,9 @@ public class EnquiryManagementServiceImpl implements EnquiryManagementService {
 	private EnquiryDeletionService deleteService;
 
 	@Override
-	public void manageEnquiry(EnquiryDto enquiry, OperationType operation) {
+	public void execute(Enquiry enquiry) {
 
-		switch (operation) {
+		switch (enquiry.getOperationType()) {
 		case CREATE:
 			createService.execute(enquiry);
 			break;

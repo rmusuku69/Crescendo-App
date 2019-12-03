@@ -1,10 +1,9 @@
 package com.crescendo.app.services.enquiry;
 
-import com.crescendo.app.constants.OperationType;
-import com.crescendo.app.entities.EnquiryDto;
+import com.crescendo.app.components.Enquiry;
 
 public interface EnquiryManagementService {
 	
-	void manageEnquiry(EnquiryDto enquiry, OperationType operation);
+	void execute(Enquiry enquiry);
 
 }

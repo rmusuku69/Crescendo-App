@@ -1,11 +1,11 @@
 package com.crescendo.app.services.enquiry;
 
-import com.crescendo.app.entities.EnquiryDto;
+import com.crescendo.app.components.Enquiry;
 
 public interface EnquiryCreationService {
-	void execute(EnquiryDto enquiryDto);
+	void execute(Enquiry enquiry);
 
-	String createEnquiryId(EnquiryDto enquiryDto);
+	String createEnquiryId(Enquiry enquiryDto);
 
-	int saveEquiry(EnquiryDto enquiryDto);
+	String saveEquiry(Enquiry enquiryDto);
 }
