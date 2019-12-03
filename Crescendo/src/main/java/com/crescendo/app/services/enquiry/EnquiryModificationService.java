@@ -1,9 +1,9 @@
 package com.crescendo.app.services.enquiry;
 
-import com.crescendo.app.entities.EnquiryDto;
+import com.crescendo.app.components.Enquiry;
 
 public interface EnquiryModificationService {
-	void execute(EnquiryDto dto);
+	void execute(Enquiry enquiry);
 
-	int updateEnquiry(EnquiryDto enquiryDto);
+	int updateEnquiry(Enquiry enquiryDto);
 }
