@@ -1,12 +1,13 @@
 package com.crescendo.app.daos.enquiry;
 
+import com.crescendo.app.core.components.CrescendoEntity;
 import com.crescendo.app.entities.EnquiryDto;
 
 public interface EnquiryManagementDAO {
 
-	int createEnquiry(EnquiryDto enquiryDto);
+	CrescendoEntity updateEnquiry(EnquiryDto dto);
 
-	int updateEnquiry(EnquiryDto dto);
+	CrescendoEntity deleteEnquiry(EnquiryDto dto);
 
-	int deleteEnquiry(EnquiryDto dto);
+	CrescendoEntity saveEnquiry(EnquiryDto enquiry);
 }

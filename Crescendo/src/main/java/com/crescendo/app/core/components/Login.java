@@ -1,4 +1,4 @@
-package com.crescendo.app.components;
+package com.crescendo.app.core.components;
 
 public class Login extends CrescendoEntity {
 	private String username;

@@ -1,4 +1,4 @@
-package com.crescendo.app.utils;
+package com.crescendo.app.core.util;
 
 public class CrescendoUtil {
 	public static Object convert(Object from, Class c) {
