@@ -2,11 +2,9 @@ package com.crescendo.app.services.enquiry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.crescendo.app.core.components.CrescendoEntity;
 import com.crescendo.app.core.components.Enquiry;
 import com.crescendo.app.daos.enquiry.EnquiryManagementDAO;
-import com.crescendo.app.entities.EnquiryDto;
 
 @Service
 public class EnquiryModificationService implements EnquiryOperationsService {
