@@ -1,5 +1,5 @@
 package com.crescendo.app.core.components;
 
-public class FollowUp extends CrescendoEntity{
+public class FollowUp extends CrescendoEntity {
 
 }

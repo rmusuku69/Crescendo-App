@@ -1,5 +1,5 @@
 package com.crescendo.app.core.components;
 
-public class User extends CrescendoEntity{
-	
+public class User extends CrescendoEntity {
+
 }

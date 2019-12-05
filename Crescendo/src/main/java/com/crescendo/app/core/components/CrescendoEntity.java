@@ -6,7 +6,6 @@ public class CrescendoEntity {
 
 	private OperationType operationType;
 
-
 	public OperationType getOperationType() {
 		return operationType;
 	}
