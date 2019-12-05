@@ -2,8 +2,6 @@ package com.crescendo.app.core.components;
 
 import java.util.List;
 
-import com.crescendo.app.core.components.CrescendoEntity;
-
 public class CrescendoResponce {
 	private List<CrescendoEntity> crescendoEntities;
 	private String viewName;

@@ -3,7 +3,6 @@ package com.crescendo.app.core.components;
 import java.util.List;
 
 import com.crescendo.app.constants.Module;
-import com.crescendo.app.core.components.CrescendoEntity;
 
 public class CrescendoRequest {
 	private List<CrescendoEntity> crescendoEntities;
