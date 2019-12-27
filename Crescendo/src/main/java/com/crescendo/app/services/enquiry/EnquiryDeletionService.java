@@ -1,5 +1,7 @@
 package com.crescendo.app.services.enquiry;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +21,10 @@ public class EnquiryDeletionService implements EnquiryOperationsService {
 	}
 
 	@Override
-	public CrescendoEntity execute(CrescendoEntity crescendoEntity) {
+	public List<CrescendoEntity> execute(CrescendoEntity crescendoEntity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
 
 }

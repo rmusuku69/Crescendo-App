@@ -7,6 +7,13 @@
 <title>Crescendo Login</title>
 </head>
 <body>
-
+<form action="loginVerify" method="post">
+ <h3>${msg}</h3>
+ <table>
+ <tr><td><input type="text" name="username" placeHolder="Username or Email"></td></tr>
+ <tr><td><input type="password" name="password" placeHolder="Password"></td></tr>
+ <tr><td><input type="submit" value="Login"></td></tr>
+ </table>
+ </form>
 </body>
 </html>
