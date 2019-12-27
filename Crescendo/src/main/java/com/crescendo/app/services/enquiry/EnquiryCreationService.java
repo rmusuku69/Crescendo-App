@@ -1,10 +1,14 @@
 package com.crescendo.app.services.enquiry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.crescendo.app.core.components.CrescendoEntity;
 import com.crescendo.app.core.components.Enquiry;
+import com.crescendo.app.core.controllers.CrescendoAppController;
 import com.crescendo.app.core.util.CrescendoUtil;
 import com.crescendo.app.daos.enquiry.EnquiryManagementDAO;
 import com.crescendo.app.entities.EnquiryDto;
@@ -25,11 +29,27 @@ public class EnquiryCreationService implements EnquiryOperationsService {
 	}
 
 	@Override
-	public CrescendoEntity execute(CrescendoEntity crescendoEntity) {
-		Enquiry enquiry = (Enquiry) crescendoEntity;
-		String enquiryId = createEnquiryId((Enquiry) crescendoEntity);
-		EnquiryDto enquiryDto = (EnquiryDto) CrescendoUtil.convert(enquiry, EnquiryDto.class);
-		enquiryDto.setEnquiryId(enquiryId);
-		return saveEquiry(enquiryDto);
+	public List<CrescendoEntity> execute(CrescendoEntity crescendoEntity) {
+		boolean isValid = validateCrescendoEntity();
+		List<CrescendoEntity> crescendoEntities = new ArrayList<CrescendoEntity>();
+		if(isValid){
+			Enquiry enquiry = (Enquiry) crescendoEntity;
+			String enquiryId = createEnquiryId((Enquiry) crescendoEntity);
+			EnquiryDto enquiryDto = (EnquiryDto) CrescendoUtil.convert(enquiry, EnquiryDto.class);
+			enquiryDto.setEnquiryId(enquiryId);
+			CrescendoEntity entity = saveEquiry(enquiryDto);
+			crescendoEntities.add(entity);
+			CrescendoAppController.setViewName("EnquirySuccess");
+		} else{
+			crescendoEntities = null;
+			CrescendoAppController.setViewName("EnquiryForm");
+		}
+		return crescendoEntities;
+		
+	}
+
+	private boolean validateCrescendoEntity() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

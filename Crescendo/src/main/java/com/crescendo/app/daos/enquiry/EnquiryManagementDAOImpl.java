@@ -10,7 +10,6 @@ import com.crescendo.app.entities.EnquiryDto;
 @Repository
 public class EnquiryManagementDAOImpl implements EnquiryManagementDAO {
 
-	@Autowired
 	private SessionFactory sessionFactory;
 
 	@Override

@@ -2,7 +2,7 @@ package com.crescendo.app.constants;
 
 public enum OperationType {
 
-	CREATE, MODIFY, DELETE;
+	CREATE, MODIFY, DELETE, SHOW;
 
 	private String operationType;
 
