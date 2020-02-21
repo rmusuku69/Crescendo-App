@@ -1,10 +1,9 @@
 package com.crescendo.app.services.login;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 
 import com.crescendo.app.core.components.CrescendoEntity;
+import com.crescendo.app.core.components.CrescendoResponse;
 import com.crescendo.app.core.components.Login;
 import com.crescendo.app.core.components.User;
 import com.crescendo.app.services.CrescendoManagementServices;
@@ -17,7 +16,7 @@ public class LoginManagementService implements CrescendoManagementServices {
 	}
 
 	@Override
-	public List<CrescendoEntity> execute(CrescendoEntity entity) {
+	public CrescendoResponse execute(CrescendoEntity entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}

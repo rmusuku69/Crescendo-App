@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.crescendo.app.core.components.CrescendoEntity;
+import com.crescendo.app.core.components.CrescendoResponse;
 import com.crescendo.app.core.components.Enquiry;
 import com.crescendo.app.core.controllers.CrescendoAppController;
 import com.crescendo.app.core.util.CrescendoUtil;
@@ -16,6 +17,8 @@ import com.crescendo.app.entities.EnquiryDto;
 @Service
 public class EnquiryCreationService implements EnquiryOperationsService {
 
+	@Autowired
+	CrescendoResponse crescendoResponse;
 	@Autowired
 	private EnquiryManagementDAO dao;
 
@@ -29,7 +32,7 @@ public class EnquiryCreationService implements EnquiryOperationsService {
 	}
 
 	@Override
-	public List<CrescendoEntity> execute(CrescendoEntity crescendoEntity) {
+	public CrescendoResponse execute(CrescendoEntity crescendoEntity) {
 		boolean isValid = validateCrescendoEntity();
 		List<CrescendoEntity> crescendoEntities = new ArrayList<CrescendoEntity>();
 		if(isValid){
@@ -39,12 +42,13 @@ public class EnquiryCreationService implements EnquiryOperationsService {
 			enquiryDto.setEnquiryId(enquiryId);
 			CrescendoEntity entity = saveEquiry(enquiryDto);
 			crescendoEntities.add(entity);
-			CrescendoAppController.setViewName("EnquirySuccess");
+			crescendoResponse.setViewName("EnquirySuccess");
+			crescendoResponse.setCrescendoEntities(crescendoEntities);
 		} else{
 			crescendoEntities = null;
-			CrescendoAppController.setViewName("EnquiryForm");
+			crescendoResponse.setViewName("EnquiryForm");
 		}
-		return crescendoEntities;
+		return crescendoResponse;
 		
 	}
 

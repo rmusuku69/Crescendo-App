@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.crescendo.app.constants.OperationType;
 import com.crescendo.app.core.components.CrescendoEntity;
+import com.crescendo.app.core.components.CrescendoResponse;
 import com.crescendo.app.services.CrescendoManagementServices;
 
 @Controller
@@ -19,24 +20,19 @@ import com.crescendo.app.services.CrescendoManagementServices;
 public class CrescendoAppController {
 	@Autowired
 	private Map<String, CrescendoManagementServices> crescendoServices;
-	private static String viewName;
-
-	public static String getViewName() {
-		return viewName;
-	}
-
-	public static void setViewName(String viewName) {
-		CrescendoAppController.viewName = viewName;
-	}
+	@Autowired
+	private CrescendoResponse crescendoResponse;
+	
 
 	// sample request -- localhost:8080/crescendo/ENQUIRY/SHOW
 	@RequestMapping(value = "{module}/{operationType}", method = { RequestMethod.GET, RequestMethod.POST })
 	public String execute(CrescendoEntity crescendoEntity, Model model, @PathVariable("module") String module,
-			@PathVariable("operationType") OperationType operationType) {
+			@PathVariable("operationType") String operationType) {
 
-		crescendoEntity.setOperationType(operationType);
-		List<CrescendoEntity> responce = crescendoServices.get(module).execute(crescendoEntity);
-		model.addAttribute("crescentoEntities", responce);
-		return viewName;
+		crescendoResponse.setOperationType(operationType);
+		crescendoResponse.setModuleName(module);
+		crescendoResponse = crescendoServices.get(module).execute(crescendoEntity);
+		model.addAttribute("crescentoEntities", crescendoResponse.getCrescendoEntities());
+		return crescendoResponse.getViewName();
 	}
 }
