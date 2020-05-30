@@ -37,7 +37,7 @@ public class CrescendoResponse {
 	}
 
 	public void setViewName(String viewName) {
-		this.viewName = this.getOperationType().toLowerCase() + this.getModuleName().toLowerCase();
+		this.viewName = this.getModuleName().toLowerCase() + this.getOperationType().toLowerCase();
 	}
 
 }

@@ -1,20 +1,36 @@
 package com.crescendo.app.core.components;
 
-import com.crescendo.app.constants.OperationType;
-
 public class CrescendoEntity {
 
-	private String studentName;
-	private String fathersName;
+	private String firstName;
+	private String lastName;
 	private String fathersEmailId;
 	private String branchName;
-
-	public String getStudentName() {
-		return studentName;
+	private String admissionNumber;
+	
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setStudentName(String studentName) {
-		this.studentName = studentName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	private String fathersName;
+	public String getAdmissionNumber() {
+		return admissionNumber;
+	}
+
+	public void setAdmissionNumber(String admissionNumber) {
+		this.admissionNumber = admissionNumber;
 	}
 
 	public String getFathersName() {
